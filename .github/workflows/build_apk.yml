@@ -25,6 +25,9 @@ jobs:
         channel: 'stable'
         architecture: x64
 
+    - name: Generate Android Project Structure
+      run: flutter create . --platforms=android --org=com.atmassistant
+
     - name: Install Dependencies
       run: flutter pub get
 
