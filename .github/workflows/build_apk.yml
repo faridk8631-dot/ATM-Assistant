@@ -23,10 +23,16 @@ jobs:
       uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
-        architecture: x64
 
-    - name: Generate Android Project Structure
-      run: flutter create . --platforms=android --org=com.atmassistant
+    - name: Re-create Clean Flutter Project Structure
+      run: |
+        mkdir -p temp_code
+        cp lib/main.dart temp_code/main.dart
+        cp pubspec.yaml temp_code/pubspec.yaml
+        rm -rf * .github
+        flutter create . --platforms=android --org=com.atmassistant
+        cp temp_code/pubspec.yaml pubspec.yaml
+        cp temp_code/main.dart lib/main.dart
 
     - name: Install Dependencies
       run: flutter pub get
