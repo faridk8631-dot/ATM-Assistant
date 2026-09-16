@@ -35,7 +35,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State {
-  final List> brands = const [
+  final List> brands = [
     {
       'name': 'Hyosung',
       'icon': Icons.account_balance,
