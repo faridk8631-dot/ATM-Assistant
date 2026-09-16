@@ -26,13 +26,13 @@ jobs:
 
     - name: Re-create Clean Flutter Project Structure
       run: |
-        mkdir -p temp_code
-        cp lib/main.dart temp_code/main.dart
-        cp pubspec.yaml temp_code/pubspec.yaml
+        mkdir -p /tmp/temp_code
+        cp lib/main.dart /tmp/temp_code/main.dart
+        cp pubspec.yaml /tmp/temp_code/pubspec.yaml
         rm -rf * .github
         flutter create . --project-name=atm_assistant --platforms=android --org=com.atmassistant
-        cp temp_code/pubspec.yaml pubspec.yaml
-        cp temp_code/main.dart lib/main.dart
+        cp /tmp/temp_code/pubspec.yaml pubspec.yaml
+        cp /tmp/temp_code/main.dart lib/main.dart
 
     - name: Install Dependencies
       run: flutter pub get
