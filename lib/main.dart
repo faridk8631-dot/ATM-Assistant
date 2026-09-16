@@ -1,4 +1,3 @@
-import 'dart01' if (dart.library.html) 'dart:html';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
